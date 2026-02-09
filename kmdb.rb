@@ -263,7 +263,46 @@ role["actor_id"] = gyllenhaal["id"]
 role["character_name"] = "Rachel Dawes"
 role.save
 
+# find by for the dark knight rises
+rises = Movie.find_by({ "title" => "The Dark Knight Rises" })
+hardy = Actor.find_by({ "name" => "Tom Hardy" })
+levitt = Actor.find_by({ "name" => "Joseph Gordon-Levitt" })
+hathaway = Actor.find_by({ "name" => "Anne Hathaway" })
 
+# Bruce Wayne
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = bale["id"]
+role["character_name"] = "Bruce Wayne"
+role.save
+
+# Commissioner Gordon
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = oldman["id"]
+role["character_name"] = "Commissioner Gordon"
+role.save
+
+# Bane
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = hardy["id"]
+role["character_name"] = "Bane"
+role.save
+
+# John Blake
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = levitt["id"]
+role["character_name"] = "John Blake"
+role.save
+
+# Selina Kyle
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = hathaway["id"]
+role["character_name"] = "Selina Kyle"
+role.save
 
 # Prints a header for the movies output
 puts "Movies"
