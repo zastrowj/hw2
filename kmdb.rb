@@ -96,6 +96,41 @@ Model.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+# add studio
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+# add movies (Linked to the studio variable above)
+warner = Studio.find_by({ "name" => "Warner Bros." })
+
+new_movie = Movie.new
+new_movie["title"] = "Batman Begins"
+new_movie["year_released"] = 2005
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = warner["id"] # No hard-coded ID
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight"
+new_movie["year_released"] = 2008
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = warner["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight Rises"
+new_movie["year_released"] = 2012
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = warner["id"]
+new_movie.save
+
+
+
+
+
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
